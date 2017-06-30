@@ -15,7 +15,13 @@ module.exports = function () {
 						fallback: 'style-loader',
 						use: [
 							{ loader: 'css-loader', options: { minimize: true, importLoaders: 1 } },
-							{ loader: 'postcss-loader', options: { plugins: () => [require('autoprefixer')] } },
+							{
+								loader: 'postcss-loader',
+								options: {
+									sourceMap: true,
+									plugins: () => [require('autoprefixer')]
+								}
+							},
 							'resolve-url-loader',
 							'sass-loader?sourceMap'
 						]
