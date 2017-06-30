@@ -2,11 +2,18 @@ const path = require('path');
 const baseConfig = require('./webpack.config');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 
 module.exports = function () {
 	return merge(baseConfig(), {
 		plugins: [
-			new webpack.NamedModulesPlugin()
+			new webpack.NamedModulesPlugin(),
+			new HtmlWebpackPlugin({
+				template: path.resolve(__dirname, '../src/index.template.ejs'),
+				alwaysWriteToDisk: true
+			}),
+			new HtmlWebpackHarddiskPlugin()
 		],
 		module: {
 			rules: [
