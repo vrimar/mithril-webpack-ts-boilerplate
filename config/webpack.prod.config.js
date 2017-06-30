@@ -13,16 +13,17 @@ module.exports = function () {
 					test: /\.s?css$/,
 					use: ExtractTextPlugin.extract({
 						fallback: 'style-loader',
-						use: ['css-loader', 'resolve-url-loader', 'sass-loader?sourceMap']
+						use: [
+							{ loader: 'css-loader', options: { minimize: true, importLoaders: 1 } },
+							{ loader: 'postcss-loader', options: { plugins: () => [require('autoprefixer')] } },
+							'resolve-url-loader',
+							'sass-loader?sourceMap'
+						]
 					})
 				}
 			]
 		},
 		plugins: [
-			new webpack.LoaderOptionsPlugin({
-				minimize: true,
-				debug: false
-			}),
 			new webpack.optimize.UglifyJsPlugin({
 				beautify: false,
 				mangle: {
@@ -39,7 +40,7 @@ module.exports = function () {
 				hash: true,
 				template: path.resolve(__dirname, '../src/index.template.ejs')
 			}),
-			new ExtractTextPlugin('css/app.css')
+			new ExtractTextPlugin('css/app-[hash].css')
 		],
 		devtool: 'nosources-source-map',
 	});
