@@ -1,0 +1,53 @@
+{
+	"name": "mithril-webpack-ts-boilerplate",
+	"version": "1.0.0",
+	"description": "",
+	"main": "''",
+	"scripts": {
+		"lint": "tslint src/**/*.ts",
+		"start": "nodemon --watch webpack.dev.config.js --exec \"webpack-dev-server --config config/webpack.dev.config.js --hot\"",
+		"clean": "rm -f public/css/*.css public/js/*.js",
+		"build": "webpack --config config/webpack.prod.config"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vasilrimar/mithril-webpack-ts-boilerplate.git"
+	},
+	"keywords": [
+		"mithril",
+		"webpack",
+		"typescript",
+		"sass",
+		"postcss"
+	],
+	"author": "Vasil Rimar",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/vasilrimar/mithril-webpack-ts-boilerplate/issues"
+	},
+	"homepage": "https://github.com/vasilrimar/mithril-webpack-ts-boilerplate#readme",
+	"dependencies": {
+		"@types/mithril": "^1.1.5",
+		"mithril": "^1.1.1",
+		"normalize.css": "^7.0.0"
+	},
+	"devDependencies": {
+		"@types/mithril": "^1.1.5",
+		"awesome-typescript-loader": "^3.2.1",
+		"css-loader": "^0.28.4",
+		"extract-text-webpack-plugin": "^2.1.2",
+		"file-loader": "^0.11.2",
+		"html-webpack-plugin": "^2.29.0",
+		"node-sass": "^4.5.3",
+		"nodemon": "^1.11.0",
+		"resolve-url-loader": "^2.1.0",
+		"sass-loader": "^6.0.6",
+		"style-loader": "^0.18.2",
+		"tslint": "^5.4.3",
+		"typescript": "^2.4.1",
+		"url-loader": "^0.5.9",
+		"webpack": "^3.0.0",
+		"webpack-dev-server": "^2.5.0",
+		"webpack-merge": "^4.1.0"
+	}
+}
