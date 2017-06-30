@@ -20,8 +20,7 @@ module.exports = function () {
 		devServer: {
 			contentBase: path.resolve(__dirname, '../public/'),
 			port: 8000,
-			stats: 'errors-only',
-			open: true
+			stats: 'errors-only'
 		}
 	})
 }

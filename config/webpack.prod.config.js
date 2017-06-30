@@ -42,11 +42,13 @@ module.exports = function () {
 				comments: false
 			}),
 			new HtmlWebpackPlugin({
-				title: 'Boilerplate',
+				title: require('../package.json').name,
 				hash: true,
-				template: path.resolve(__dirname, '../src/index.template.ejs')
+				template: path.resolve(__dirname, '../src/index.template.ejs'),
+				favicon: path.resolve(__dirname, '../resources/logo.svg'),
+				hash: false
 			}),
-			new ExtractTextPlugin('css/app-[hash].css')
+			new ExtractTextPlugin('css/app-[hash].css'),
 		],
 		devtool: 'nosources-source-map',
 	});
