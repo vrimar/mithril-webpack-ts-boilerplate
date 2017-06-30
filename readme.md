@@ -7,12 +7,17 @@
 - SASS with PostCSS autoprefixer
 
 ## Installation
+
 ```npm install```
 
 ## Development
+
 ```npm run start```
 
+Project will be served from `localhost:8000`
+
 ## Build
+
 ```npm run build```
 
 Compiles minified js and css to the `output` directory.
