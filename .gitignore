@@ -83,3 +83,5 @@ npm-debug.log*
 /coverage/*
 /libpeerconnection.log
 testem.log
+
+/public/*
