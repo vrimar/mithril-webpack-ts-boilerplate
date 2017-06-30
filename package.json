@@ -27,7 +27,6 @@
 	},
 	"homepage": "https://github.com/vasilrimar/mithril-webpack-ts-boilerplate#readme",
 	"dependencies": {
-		"@types/mithril": "^1.1.5",
 		"mithril": "^1.1.1",
 		"normalize.css": "^7.0.0"
 	},

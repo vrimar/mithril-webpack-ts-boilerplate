@@ -83,9 +83,3 @@ npm-debug.log*
 /coverage/*
 /libpeerconnection.log
 testem.log
-
-# App generated & config files
-/public/css/*.css
-/public/css/*.map
-/public/js/*.js
-/public/js/*.map
