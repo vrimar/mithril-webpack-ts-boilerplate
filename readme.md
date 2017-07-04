@@ -20,4 +20,4 @@ Project will be served from `localhost:8000`
 
 ```npm run build```
 
-Compiles minified js and css to the `output` directory.
+Compiles minified js and css to the `public` directory.
