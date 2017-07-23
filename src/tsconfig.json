@@ -9,15 +9,6 @@
 		],
 		"module": "commonjs",
 		"sourceMap": false,
-		"target": "es5",
-		"typeRoots": [
-			"node_modules/@types"
-		]
-	},
-	"files": [
-		"src/index.ts"
-	],
-	"exclude": [
-		"node_modules"
-	]
+		"target": "es5"
+	}
 }
