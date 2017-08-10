@@ -5,7 +5,9 @@
 	"rules": {
 		"curly": false,
 		"indent": [
-			false
+			true,
+			"spaces",
+			2
 		],
 		"member-access": false,
 		"no-invalid-this": [
