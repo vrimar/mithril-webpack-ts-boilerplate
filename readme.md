@@ -1,9 +1,9 @@
 # Mithril-Webpack-Typescript-Boilerplate
 
 ## Features
-- Mithril 1.1.3^
-- Webpack 3.3.0^
-- Typescript 2.4^ with tslint
+- Mithril 1.1.3
+- Webpack 3.5.5
+- Typescript 2.4.2 with TSlint
 - SASS with PostCSS autoprefixer
 
 ## Installation
