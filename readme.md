@@ -2,8 +2,8 @@
 
 ## Features
 - Mithril 1.1.3
-- Webpack 3.5.5
-- Typescript 2.4.2 with TSlint
+- Webpack 3.5.*
+- Typescript 2.5.* with TSlint
 - SASS with PostCSS autoprefixer
 
 ## Installation
