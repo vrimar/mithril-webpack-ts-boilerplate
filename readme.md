@@ -1,7 +1,7 @@
 # Mithril-Webpack-Typescript-Boilerplate
 
 ## Features
-- Mithril 1.1.5
+- Mithril 1.1.6
 - Webpack 3.8.*
 - Typescript 2.6.* with TSlint
 - SASS with PostCSS autoprefixer
