@@ -3,7 +3,7 @@
 ## Features
 - Mithril 1.1.6
 - Webpack 3.8.*
-- Typescript 2.6.* with TSlint
+- Typescript 2.7.* with TSlint
 - SASS with PostCSS autoprefixer
 
 ## Installation
