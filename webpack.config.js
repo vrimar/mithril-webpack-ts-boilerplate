@@ -5,6 +5,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
+const APP_TITLE = ''
+const TEMPLATE_PATH = 'src/index.template.ejs';
+const DEV_PORT = 8080;
 const isProduction = process.env.NODE_ENV === 'production';
 
 const plugins = {
@@ -25,17 +28,18 @@ const plugins = {
       comments: false
     }),
     new HtmlWebpackPlugin({
-      title: 'b3Intelligence ProjectManagement Tool',
-      template: 'src/index.template.ejs'
+      title: APP_TITLE,
+      template: TEMPLATE_PATH
     })
   ],
   development: [
     new HtmlWebpackPlugin({
-      template: 'src/index.template.ejs',
+      title: APP_TITLE,
+      template: TEMPLATE_PATH,
       alwaysWriteToDisk: true
     }),
     new HtmlWebpackHarddiskPlugin(),
-    new OpenBrowserPlugin({ url: 'http://localhost:8080' })
+    new OpenBrowserPlugin({ url: `http://localhost:${DEV_PORT}` })
   ]
 }
 
@@ -97,7 +101,7 @@ module.exports = {
   devtool: isProduction ? 'source-map' : 'cheap-eval-source-map',
   devServer: {
     contentBase: __dirname,
-    port: 8080,
+    port: DEV_PORT,
     stats: 'errors-only',
     watchOptions: {
       ignored: /node_modules/
