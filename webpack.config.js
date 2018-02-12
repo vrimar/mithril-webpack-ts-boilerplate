@@ -4,8 +4,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
+const packageJson = require('./package.json');
 
-const APP_TITLE = ''
+const APP_TITLE = packageJson.desciption;
 const TEMPLATE_PATH = 'src/index.template.ejs';
 const DEV_PORT = 8080;
 const isProduction = process.env.NODE_ENV === 'production';
