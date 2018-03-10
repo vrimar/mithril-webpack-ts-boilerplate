@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
-const OpenBrowserPlugin = require('open-browser-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const packageJson = require('./package.json');
 
 const APP_TITLE = packageJson.desciption;
@@ -12,22 +12,9 @@ const DEV_PORT = 8080;
 const isProduction = process.env.NODE_ENV === 'production';
 
 const plugins = {
-  common: [
-    new webpack.NamedModulesPlugin(),
-  ],
   production: [
     new ExtractTextPlugin('app-[hash:6].css'),
-    new webpack.optimize.UglifyJsPlugin({
-      beautify: false,
-      mangle: {
-        screw_ie8: true,
-        keep_fnames: true
-      },
-      compress: {
-        screw_ie8: true
-      },
-      comments: false
-    }),
+    // new UglifyJsPlugin(),
     new HtmlWebpackPlugin({
       title: APP_TITLE,
       template: TEMPLATE_PATH
@@ -40,7 +27,6 @@ const plugins = {
       alwaysWriteToDisk: true
     }),
     new HtmlWebpackHarddiskPlugin(),
-    new OpenBrowserPlugin({ url: `http://localhost:${DEV_PORT}` })
   ]
 }
 
@@ -98,11 +84,12 @@ module.exports = {
       }
     ]
   },
-  plugins: plugins.common.concat(isProduction ? plugins.production : plugins.development),
+  plugins: isProduction ? plugins.production : plugins.development,
   devtool: isProduction ? 'source-map' : 'cheap-eval-source-map',
   devServer: {
     contentBase: __dirname,
     port: DEV_PORT,
+    open: true,
     stats: 'errors-only',
     watchOptions: {
       ignored: /node_modules/
