@@ -2,7 +2,6 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackHarddiskPlugin = require('html-webpack-harddisk-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const packageJson = require('./package.json');
 
@@ -14,7 +13,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 const plugins = {
   production: [
     new ExtractTextPlugin('app-[hash:6].css'),
-    // new UglifyJsPlugin(),
+    new UglifyJsPlugin(),
     new HtmlWebpackPlugin({
       title: APP_TITLE,
       template: TEMPLATE_PATH
@@ -24,9 +23,7 @@ const plugins = {
     new HtmlWebpackPlugin({
       title: APP_TITLE,
       template: TEMPLATE_PATH,
-      alwaysWriteToDisk: true
     }),
-    new HtmlWebpackHarddiskPlugin(),
   ]
 }
 
@@ -85,7 +82,7 @@ module.exports = {
     ]
   },
   plugins: isProduction ? plugins.production : plugins.development,
-  devtool: isProduction ? 'source-map' : 'cheap-eval-source-map',
+  devtool: isProduction ? undefined : 'cheap-eval-source-map',
   devServer: {
     contentBase: __dirname,
     port: DEV_PORT,
